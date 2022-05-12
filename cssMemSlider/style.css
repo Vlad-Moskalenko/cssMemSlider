@@ -33,7 +33,7 @@ body {
     align-items: center;
     flex-wrap: nowrap;
     padding: 0 40px;
-    align-items: baseline
+    align-items: flex-start;
 }
 
 p {
@@ -48,6 +48,10 @@ input {
 .label {
     display: flex;
     z-index: 100;
+}
+
+img {
+    max-width: 912px;
 }
 
 label {
@@ -114,4 +118,20 @@ label:active {
 #slide3:checked~.text-controls>.label>.label3,
 #slide4:checked~.text-controls>.label>.label4 {
     background: blue;
+}
+
+@media screen and (max-width: 328px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-controls {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .label {
+        align-self: center;
+    }
 }
