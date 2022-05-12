@@ -1,8 +1,8 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     font-size: 10px;
+    box-sizing: border-box;
 }
 
 body {
@@ -10,36 +10,91 @@ body {
 }
 
 .wrapper {
-    position: relative;
-    max-width: 992px;
+    width: 992px;
+    overflow: hidden;
     margin: auto;
 }
 
 .slider {
-    overflow: hidden;
     display: flex;
-}
-
-p {
-    margin-top: 20px;
-    font-size: 3.2rem;
-    color: white;
+    width: 400%;
+    height: 100%;
 }
 
 .slides {
     padding: 20px 40px;
-    background: black;
+    width: 25%;
+    transition: all 1s ease;
 }
 
-.input-radio {
-    position: absolute;
-    right: 40px;
-    top: 680px;
+.text-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0 40px;
+    align-items: baseline
+}
+
+p {
+    font-size: 3.2rem;
+    color: white;
 }
 
 input {
+    display: none;
+}
+
+.label {
+    display: flex;
+    z-index: 100;
+}
+
+label {
     cursor: pointer;
-    margin: 5px;
-    height: 20px;
-    width: 20px;
+    display: flex;
+    height: 12px;
+    margin-left: 16px;
+    width: 12px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+}
+
+#slide1:checked~.slider>.s1 {
+    margin-left: 0;
+}
+
+#slide2:checked~.slider>.s1 {
+    margin-left: -25%;
+}
+
+#slide3:checked~.slider>.s1 {
+    margin-left: -50%;
+}
+
+#slide4:checked~.slider>.s1 {
+    margin-left: -75%;
+}
+
+.text1,
+.text2,
+.text3,
+.text4 {
+    display: none;
+    opacity: 0;
+}
+
+#slide1:checked~.text-controls>.text>.text1,
+#slide2:checked~.text-controls>.text>.text2,
+#slide3:checked~.text-controls>.text>.text3,
+#slide4:checked~.text-controls>.text>.text4 {
+    display: block;
+    opacity: 1;
+    animation: display-none-transition 1s both;
+}
+
+@keyframes display-none-transition {
+    0% {
+        opacity: 0;
+    }
 }
