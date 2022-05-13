@@ -10,7 +10,7 @@ body {
 }
 
 .wrapper {
-    width: 992px;
+    max-width: 998px;
     overflow: hidden;
     margin: auto;
 }
@@ -47,19 +47,16 @@ input {
 
 .label {
     display: flex;
-    z-index: 100;
 }
 
 img {
-    max-width: 912px;
+    max-width: 100%;
 }
 
 label {
     cursor: pointer;
     display: flex;
-    height: 12px;
     margin-left: 4px;
-    width: 12px;
     border: 12px solid #222;
     border-radius: 50%;
     padding: 8px;
@@ -104,7 +101,7 @@ label:active {
 #slide4:checked~.text-controls>.text>.text4 {
     display: block;
     opacity: 1;
-    animation: display-none-transition 1s both;
+    animation: display-none-transition 2s both;
 }
 
 @keyframes display-none-transition {
@@ -120,7 +117,7 @@ label:active {
     background: blue;
 }
 
-@media screen and (max-width: 328px) {
+@media screen and (max-width: 414px) {
     .wrapper {
         display: flex;
         flex-direction: column;
