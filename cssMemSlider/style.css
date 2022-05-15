@@ -11,10 +11,10 @@ body {
 
 .wrapper {
     background: black;
-    max-width: 128rem;
-    height: 100vh;
+    max-width: 82.8rem;
     overflow: hidden;
     margin: auto;
+    height: 100vh;
 }
 
 .slider {
@@ -34,7 +34,7 @@ body {
     align-items: center;
     flex-wrap: nowrap;
     align-items: flex-start;
-    padding: 0 6% 8%;
+    padding: 0 6% 4%;
 }
 
 p {
@@ -119,6 +119,10 @@ label:active {
 }
 
 @media screen and (max-width: 414px) {
+    * {
+        font-size: 7px;
+    }
+
     .wrapper {
         display: flex;
         flex-direction: column;
@@ -126,7 +130,7 @@ label:active {
 
     .text-controls {
         flex-direction: column-reverse;
-        gap: 2rem;
+        gap: 10%;
     }
 
     .label {
