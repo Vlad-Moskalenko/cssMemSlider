@@ -131,7 +131,7 @@ label:active {
 
     .text-controls {
         flex-direction: column-reverse;
-        gap: 10%;
+        gap: 1rem;
     }
 
     .label {
