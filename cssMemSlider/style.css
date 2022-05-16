@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+body {
+    background: #222;
+}
+
+.wrapper {
+    background: black;
+    max-width: 82.8rem;
+    overflow: hidden;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slider {
+    display: flex;
+    width: 400%;
+}
+
+.slides {
+    padding: 0.5% 1.5%;
+    width: 25%;
+    transition: all 1s ease;
+}
+
+.text-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: flex-start;
+    padding: 0 6% 3%;
+}
+
+p {
+    font-size: 3.2rem;
+    color: white;
+}
+
+input {
+    display: none;
+}
+
+.label {
+    display: flex;
+}
+
+img {
+    max-width: 100%;
+}
+
+label {
+    cursor: pointer;
+    margin-left: 0.4rem;
+    border: 1.2rem solid black;
+    border-radius: 50%;
+    padding: 0.8rem;
+    background: white;
+}
+
+label:hover {
+    background: yellow;
+}
+
+label:active {
+    background: red;
+}
+
+#slide1:checked~.slider>.s1 {
+    margin-left: 0;
+}
+
+#slide2:checked~.slider>.s1 {
+    margin-left: -25%;
+}
+
+#slide3:checked~.slider>.s1 {
+    margin-left: -50%;
+}
+
+#slide4:checked~.slider>.s1 {
+    margin-left: -75%;
+}
+
+.text1,
+.text2,
+.text3,
+.text4 {
+    height: 0;
+    opacity: 0;
+}
+
+#slide1:checked~.text-controls>.text>.text1,
+#slide2:checked~.text-controls>.text>.text2,
+#slide3:checked~.text-controls>.text>.text3,
+#slide4:checked~.text-controls>.text>.text4 {
+    height: auto;
+    opacity: 1;
+    animation: display-none-transition 2s both;
+}
+
+@keyframes display-none-transition {
+    0% {
+        opacity: 0;
+    }
+}
+
+#slide1:checked~.text-controls>.label>.label1,
+#slide2:checked~.text-controls>.label>.label2,
+#slide3:checked~.text-controls>.label>.label3,
+#slide4:checked~.text-controls>.label>.label4 {
+    background: blue;
+}
+
+@media screen and (max-width: 414px) {
+    * {
+        font-size: 7px;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-controls {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+
+    .label {
+        align-self: center;
+    }
+}
